@@ -1,0 +1,64 @@
+:root {
+    --cpurple: #8C2CB8;
+    --chpurple: #602080;
+    --cyellow: #FFF200;
+}
+
+.post {
+    border: 0.75em solid var(--chpurple);
+    background-color: var(--cpurple);
+    color: var(--cyellow);
+    width: 40%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: justify;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.text {
+    flex-basis: 90%;
+    align-self: center;
+    justify-content: center;
+}
+
+.side {
+    flex-basis: 8%;
+    padding: 1%;
+    align-items: center;
+    justify-content: center;
+}
+
+.side p {
+    margin: 0;
+}
+
+.post button {
+    border: none;
+    padding: 0;
+    background: none;
+}
+
+/*
+.comment {
+    
+}
+*/
+
+.post #lab_like {
+    background-image: url('../img/heart.png') no-repeat;
+    background-size: 100% 100%;
+}

@@ -1,0 +1,56 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.375), rgba(0, 0, 0, 0.375)), url("../img/fire_1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    background-image: url("../img/stone_bttn.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 3.5rem;
+    min-width: fit-content;
+    min-height: fit-content;
+    color: white;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    filter: brightness(110%);
+    outline: none;
+}
+
+.custom-file-upload:hover {
+    filter: brightness(120%);
+}
+
+.custom-file-upload:active {
+    filter: brightness(90%);
+}
+
+.dropDsel {
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .body {
+        height: 100%;
+        width: 100%;
+        background-position: 50% 50%;
+        background-size: 600px 337px;
+    }
+}
