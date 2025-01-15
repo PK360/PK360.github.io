@@ -1,0 +1,124 @@
+:root {
+  --primary: #8C2CB8;
+  --background: #FFF200;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 20fr;
+  place-items: start;
+  font-family: 'Trebuchet MS', sans;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Base styles of stuff */
+.tab {
+  position: relative;
+}
+.tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.tab_content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.55s;
+  text-align: justify;
+  background-color: white;
+}
+.tab input:checked ~ .tab_content {
+  max-height: 75rem;
+}
+
+#title {
+  justify-content: "center";
+  text-shadow: 4px 2px 5px rgb(50, 50, 50);
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+/* Styling elements of accordion */
+.accordion {
+  color: black;
+  width: 100%;
+  border: 2px solid var(--primary);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.tab_label {
+  background-color: var(--primary);
+  display: flex;
+  color: var(--background);
+  border: 2px var(--primary);
+  cursor: pointer;
+  justify-content: space-between;
+  text-align: center;
+  padding: 1rem;
+}
+.tab_label:hover, .tab input:checked + .tab_label {
+  font-weight: bold;
+}
+
+.tab_label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  transform-origin: 30% 65%;
+  transform: rotate(180deg);
+  text-align: center;
+  transition: all 0.35s;
+  font-weight: normal !important;
+}
+.tab input:checked + .tab_label::after {
+  transform-origin: 50% 40%;
+  transform: rotate(90deg);
+}
+
+.tab_content p {
+  margin: 0;
+  padding: 1rem;
+}
+
+#linkst {
+  color: var(--primary);
+}
+
+/* Animations */
+.tab input:not(:checked) + .tab_label:hover::after {
+  animation: bounce_cl 0.5s infinite;
+}
+@keyframes bounce_cl {
+  25% {
+    transform-origin: 30% 65%;
+    transform: rotate(180deg) translate(0.125rem);
+  }
+  75% {
+    transform-origin: 30% 65%;
+    transform: rotate(180deg) translate(-0.125rem);
+  }
+}
+
+.tab input:checked + .tab_label:hover::after {
+  animation: bounce_op 0.5s infinite;
+}
+@keyframes bounce_op {
+  25% {
+    transform-origin: 50% 40%;
+    transform: rotate(90deg) translate(0.125rem);
+  }
+  75% {
+    transform-origin: 50% 40%;
+    transform: rotate(90deg) translate(-0.125rem);
+  }
+}

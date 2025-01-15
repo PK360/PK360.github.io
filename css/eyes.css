@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}

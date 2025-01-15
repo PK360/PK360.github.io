@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Szechuan Zone</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Sign up for an account">
+        <link rel="stylesheet" href="../css/signup.css" type="text/css">
+        <link rel="icon" type="image/x-icon" href="../img/szechuan.ico">
+        <script src="../js/signup.js"></script>
+    </head>
+    <body>
+        <div class="image"></div>
+        <div id="main_content">
+            <div class="content">
+                <section class="row">
+                    <h2 class="column">Sign up</h2>
+                </section>
+                <form id="signup">
+                    <label for="uname" class="lab"><b>Username</b></label><br>
+                    <input type="text" placeholder="Enter username..." id="uname" name="username" pattern="\w{6,20}" required class="inp"><br>
+                    <label for="pswd" class="lab"><b>Password</b></label><br>
+                    <input type="password" placeholder="Enter password..." id="pswd" name="password" pattern="\w{8,20}" required class="inp"><br>
+                    <label for="pswd2" class="lab"><b>Confirm Password</b></label><br>
+                    <input type="password" placeholder="Confirm password..." id="pswd2" name="password2" pattern="\w{8,20}" required class="inp"><br>
+                    <div>
+                        <button type="button" id="subb">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
