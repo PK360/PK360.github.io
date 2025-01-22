@@ -1,5 +1,10 @@
+idx = [], i = -1;
+
 window.onload = function () {
     changeLogin();
+
+    document.getElementById("start").addEventListener("click", start);
+    document.getElementById("stop").addEventListener("click", stop);
 }
 
 function respIcon() {
@@ -55,5 +60,42 @@ function changeLogin() {
         login.href = "../pages/login.html";
         login.innerHTML = "Login";
         nav.appendChild(login);
+    }
+}
+
+function start() {
+    idx[++i] = setInterval(function () {
+        let canv = document.getElementById("space")
+        let printer = canv.getBoundingClientRect();
+        let dot = document.createElement("div");
+
+        dot.style.display= "inline-block";
+        dot.style.position = "absolute";
+        let w = Math.floor(printer.right - printer.left);
+        let h = Math.floor(printer.bottom - printer.top);
+        let posx = Math.floor(Math.min(20 + Math.random() * w, w - 30));
+        let posy = Math.floor(Math.min(printer.top + 10 + Math.random() * h, printer.top + h - 30));
+        dot.style.left = posx + "px";
+        dot.style.top = posy + "px";
+
+        dot.innerHTML = "hello";
+        dot.style.fontSize = "20px";
+        dot.style.color = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
+        canv.appendChild(dot);
+    }, 1500);
+    console.log(idx);
+    console.log(i);
+}
+
+function stop() {
+    console.log(idx);
+    console.log(i);
+    if (i != -1) {
+        clearInterval(idx[i]);
+        i--;
+        let canv = document.getElementById("space");
+        while (canv.lastElementChild) {
+            canv.removeChild(canv.lastElementChild);
+        }
     }
 }

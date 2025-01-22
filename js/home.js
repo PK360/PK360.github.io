@@ -40,7 +40,7 @@ function changeLogin() {
     
     prof.style.userSelect = "none";
     if (login_title.classList.contains("loggedin")) {
-        prof.href = "NO.html";
+        prof.href = "profile.html";
         let logout = document.createElement("a");
         logout.setAttribute("id", "login_logout");
         logout.addEventListener("click", logout_account);

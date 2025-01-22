@@ -15,39 +15,28 @@ window.onload = function () {
             throw new Error("Passwords do not match!");
         }
         
-        var promise = fetch('https://pk360.github.io/json/users.json');
-        var users = [];
-        
-        promise.then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(function(text) {    
-            users = JSON.parse(text);
-            users.push(data);
-            console.log(users);
-            fetch('../json/users.json', {
-                method:"post",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(function (response) {
-                return response.status;
-            })
-            .then(function(status) {
-                alert(status);
-            }); 
+        var users = JSON.parse(localStorage.getItem('users'));
+        users.push(data);
+        localStorage.setItem('users', JSON.stringify(users)); 
 
-            alert("Sign up successful! Welcome to the Szechuan Zone!");
-            window.location.href = 'login.html';
+        alert("Sign up successful! Welcome to the Szechuan Zone!");
+        window.location.href = 'login.html';
+        
+        /*
+        fetch('../json/users.json', {
+            method:"post",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
         })
-        .catch(function(err){
-            alert(err);
-        });
+        .then(function (response) {
+            return response.status;
+        })
+        .then(function(status) {
+            alert(status);
+        }); 
+        */
     });
 
     document.body.addEventListener('keypress', function (e) {
