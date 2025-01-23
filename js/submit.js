@@ -12,7 +12,10 @@ window.onload = function() {
                 window.location.href = "https://en.wikipedia.org/wiki/Main_Page"
             }
             else if (reader.result.localeCompare("POKEMON") == 0) {
-                window.location.href = "../start.html"
+                window.location.href = "../index.html"
+            }
+            else if (reader.result.localeCompare("GITHUB") == 0) {
+                window.location.href = "../pages/NO.html";
             }
             inputfile.value = null;
         };
